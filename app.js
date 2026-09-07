@@ -1,3 +1,8 @@
+const mediaStyles = document.createElement('link');
+mediaStyles.rel = 'stylesheet';
+mediaStyles.href = 'media.css';
+document.head.appendChild(mediaStyles);
+
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
 const mobileMenu = document.querySelector('[data-mobile-menu]');
