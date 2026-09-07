@@ -52,3 +52,71 @@ if (reducedMotion || !('IntersectionObserver' in window)) {
 
   reveals.forEach((item) => observer.observe(item));
 }
+
+const siteFooter = document.querySelector('footer');
+
+if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
+  const atlasSignature = document.createElement('div');
+  atlasSignature.className = 'atlas-signature';
+  atlasSignature.setAttribute('aria-label', 'Site desenvolvido pela Atlas Presença');
+  atlasSignature.innerHTML = `
+    <span>Site desenvolvido pela</span>
+    <span class="atlas-signature-brand">
+      <img src="https://raw.githubusercontent.com/nke989-coder/studio-melissa-pugsley/main/atlas-monograma.png" alt="" aria-hidden="true" />
+      <strong>ATLAS PRESENÇA</strong>
+    </span>
+  `;
+  siteFooter.appendChild(atlasSignature);
+
+  const atlasStyles = document.createElement('style');
+  atlasStyles.textContent = `
+    .atlas-signature {
+      width: min(1180px, calc(100vw - 40px));
+      margin: 28px auto 0;
+      padding: 22px 0 4px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,.5);
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+    .atlas-signature-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: rgba(255,255,255,.82);
+    }
+    .atlas-signature-brand img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .92;
+    }
+    .atlas-signature-brand strong {
+      font-size: 10px;
+      letter-spacing: .16em;
+      font-weight: 600;
+    }
+    @media (max-width: 640px) {
+      .atlas-signature {
+        margin-top: 22px;
+        padding-top: 18px;
+        font-size: 10px;
+        gap: 8px;
+      }
+      .atlas-signature-brand img {
+        width: 20px;
+        height: 20px;
+      }
+      .atlas-signature-brand strong {
+        font-size: 9px;
+      }
+    }
+  `;
+  document.head.appendChild(atlasStyles);
+}
