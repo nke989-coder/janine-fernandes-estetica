@@ -73,7 +73,6 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
           </svg>
         </span>
         <strong>ATLAS PRESENÇA</strong>
-        <span class="atlas-signature-arrow" aria-hidden="true">↗</span>
       </span>
     </a>
   `;
@@ -97,9 +96,11 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
       flex-wrap: wrap;
       color: rgba(255,255,255,.62);
       text-decoration: none;
-      transition: color .2s ease, transform .2s ease;
+      cursor: pointer;
+      transition: color .2s ease, transform .2s ease, opacity .2s ease;
     }
-    .atlas-signature-link:hover {
+    .atlas-signature-link:hover,
+    .atlas-signature-link:focus-visible {
       color: #fff;
       transform: translateY(-1px);
     }
@@ -133,14 +134,6 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
       line-height: 1;
       letter-spacing: .18em;
       font-weight: 600;
-    }
-    .atlas-signature-arrow {
-      color: rgba(255,255,255,.5);
-      font-size: 13px;
-      transition: transform .2s ease;
-    }
-    .atlas-signature-link:hover .atlas-signature-arrow {
-      transform: translate(2px,-2px);
     }
     @media (max-width: 640px) {
       .atlas-signature {
