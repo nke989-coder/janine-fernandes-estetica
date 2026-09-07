@@ -60,7 +60,7 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
   atlasSignature.className = 'atlas-signature';
   atlasSignature.innerHTML = `
     <a class="atlas-signature-link"
-       href="https://atlas-presenca-digital.cloudy-petal-3052.chatgpt.site/"
+       href="https://atlaspresenca.com.br/"
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Site desenvolvido pela ATLAS PRESENÇA — abrir site da ATLAS">
