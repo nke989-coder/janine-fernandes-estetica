@@ -59,21 +59,14 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
   const atlasSignature = document.createElement('div');
   atlasSignature.className = 'atlas-signature';
   atlasSignature.innerHTML = `
-    <a class="atlas-signature-link"
-       href="https://atlaspresenca.com.br/"
+    <a class="atlas-credit"
+       href="https://atlaspresenca.com.br"
        target="_blank"
        rel="noopener noreferrer"
-       aria-label="Site desenvolvido pela ATLAS PRESENÇA — abrir site da ATLAS">
-      <span class="atlas-signature-copy">Site desenvolvido pela</span>
-      <span class="atlas-signature-brand">
-        <span class="atlas-signature-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="presentation">
-            <path d="M24 4 42 42h-8.2l-3.1-7H17.2L14 42H6L24 4Zm0 13-4.3 10.3h8.6L24 17Z" fill="currentColor"/>
-            <path d="M14.8 31.2h18.4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
-          </svg>
-        </span>
-        <strong>ATLAS PRESENÇA</strong>
-      </span>
+       aria-label="Site desenvolvido pela Atlas Presença">
+      <span>Site desenvolvido pela</span>
+      <img src="https://raw.githubusercontent.com/nke989-coder/studio-melissa-pugsley/main/atlas-monograma.png" alt="" aria-hidden="true" />
+      <strong>Atlas Presença</strong>
     </a>
   `;
   siteFooter.appendChild(atlasSignature);
@@ -83,57 +76,38 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
     .atlas-signature {
       width: min(1180px, calc(100vw - 40px));
       margin: 30px auto 0;
-      padding: 24px 0 2px;
-      border-top: 1px solid rgba(255,255,255,.14);
+      padding: 22px 0 2px;
+      border-top: 1px solid rgba(255,255,255,.15);
       display: flex;
+      align-items: center;
       justify-content: center;
     }
-    .atlas-signature-link {
+    .atlas-credit {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      flex-wrap: wrap;
-      color: rgba(255,255,255,.62);
+      gap: 8px;
+      color: #eee4dd;
+      font-size: 9px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
-      transition: color .2s ease, transform .2s ease, opacity .2s ease;
+      transition: color .2s ease;
     }
-    .atlas-signature-link:hover,
-    .atlas-signature-link:focus-visible {
-      color: #fff;
-      transform: translateY(-1px);
-    }
-    .atlas-signature-copy {
-      font-size: 11px;
-      font-weight: 400;
-      letter-spacing: .01em;
-      text-transform: none;
-    }
-    .atlas-signature-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .atlas-credit:hover,
+    .atlas-credit:focus-visible {
       color: #fff;
     }
-    .atlas-signature-mark {
-      width: 28px;
-      height: 28px;
-      display: inline-grid;
-      place-items: center;
-      color: #fff;
-      flex: 0 0 28px;
-    }
-    .atlas-signature-mark svg {
-      width: 28px;
-      height: 28px;
+    .atlas-credit img {
+      width: 26px;
+      height: auto;
       display: block;
+      object-fit: contain;
     }
-    .atlas-signature-brand strong {
-      font-size: 10px;
-      line-height: 1;
-      letter-spacing: .18em;
+    .atlas-credit strong {
       font-weight: 600;
+      letter-spacing: .13em;
     }
     @media (max-width: 640px) {
       .atlas-signature {
@@ -141,23 +115,8 @@ if (siteFooter && !siteFooter.querySelector('.atlas-signature')) {
         margin-top: 24px;
         padding-top: 20px;
       }
-      .atlas-signature-link {
-        gap: 8px;
-      }
-      .atlas-signature-copy {
-        font-size: 10px;
-      }
-      .atlas-signature-mark,
-      .atlas-signature-mark svg {
-        width: 24px;
-        height: 24px;
-      }
-      .atlas-signature-mark {
-        flex-basis: 24px;
-      }
-      .atlas-signature-brand strong {
-        font-size: 9px;
-        letter-spacing: .15em;
+      .atlas-credit {
+        flex-wrap: wrap;
       }
     }
   `;
